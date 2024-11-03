@@ -1,0 +1,136 @@
+ [
+      {
+        "product_id": 1,
+        "product_title": "Ultrabook X200",
+        "product_image": "ultrabook_x200.jpg",
+        "category": "Laptops",
+        "price": 1200,
+        "description": "Lightweight laptop with a powerful processor and extended battery life.",
+        "Specification": ["Intel i7", "16GB RAM", "512GB SSD"],
+        "availability": true,
+        "rating": 4.7
+      },
+      {
+        "product_id": 2,
+        "product_title": "Gaming Laptop Z500",
+        "product_image": "gaming_laptop_z500.jpg",
+        "category": "Laptops",
+        "price": 1500,
+        "description": "High-performance gaming laptop with a dedicated graphics card.",
+        "Specification": ["AMD Ryzen 9", "16GB RAM", "1TB SSD", "NVIDIA GTX 3070"],
+        "availability": true,
+        "rating": 4.8
+      },
+      {
+        "product_id": 3,
+        "product_title": "Business Laptop Pro 15",
+        "product_image": "business_laptop_pro_15.jpg",
+        "category": "Laptops",
+        "price": 900,
+        "description": "Professional laptop designed for business use with high security.",
+        "Specification": ["Intel i5", "8GB RAM", "256GB SSD"],
+        "availability": true,
+        "rating": 4.5
+      },
+      {
+        "product_id": 4,
+        "product_title": "2-in-1 Convertible Laptop",
+        "product_image": "convertible_laptop.jpg",
+        "category": "Laptops",
+        "price": 750,
+        "description": "Versatile 2-in-1 laptop that can be used as a tablet.",
+        "Specification": ["Intel i3", "4GB RAM", "128GB SSD"],
+        "availability": true,
+        "rating": 4.2
+      },
+      {
+        "product_id": 5,
+        "product_title": "Gaming Laptop A1000",
+        "product_image": "gaming_laptop_a1000.jpg",
+        "category": "Laptops",
+        "price": 1800,
+        "description": "Ultimate gaming laptop with advanced cooling system.",
+        "Specification": ["Intel i7", "32GB RAM", "2TB SSD", "NVIDIA RTX 3080"],
+        "availability": true,
+        "rating": 4.9
+      },
+      {
+        "product_id": 6,
+        "product_title": "Chromebook 14",
+        "product_image": "chromebook_14.jpg",
+        "category": "Laptops",
+        "price": 400,
+        "description": "Affordable Chromebook for everyday tasks and online browsing.",
+        "Specification": ["Intel Celeron", "4GB RAM", "32GB Storage"],
+        "availability": true,
+        "rating": 4.0
+      },
+      {
+        "product_id": 7,
+        "product_title": "Smartphone Model A",
+        "product_image": "smartphone_model_a.jpg",
+        "category": "Smartphones",
+        "price": 600,
+        "description": "Feature-packed smartphone with an amazing camera.",
+        "Specification": ["Triple-Lens Camera", "128GB Storage", "5G Support"],
+        "availability": true,
+        "rating": 4.6
+      },
+      {
+        "product_id": 8,
+        "product_title": "Smartphone Model B",
+        "product_image": "smartphone_model_b.jpg",
+        "category": "Smartphones",
+        "price": 750,
+        "description": "High-end smartphone with OLED display and fast charging.",
+        "Specification": ["OLED Display", "256GB Storage", "Fast Charging"],
+        "availability": true,
+        "rating": 4.7
+      },
+      {
+        "product_id": 9,
+        "product_title": "Wireless Earbuds",
+        "product_image": "wireless_earbuds.jpg",
+        "category": "Accessories",
+        "price": 80,
+        "description": "Compact wireless earbuds with noise cancellation.",
+        "Specification": ["Noise Cancellation", "Water Resistant", "20-Hour Battery"],
+        "availability": true,
+        "rating": 4.4
+      },
+      {
+        "product_id": 10,
+        "product_title": "Portable Charger 10000mAh",
+        "product_image": "portable_charger.jpg",
+        "category": "Accessories",
+        "price": 50,
+        "description": "Lightweight and compact power bank for on-the-go charging.",
+        "Specification": ["10000mAh Capacity", "USB-C", "Fast Charging Support"],
+        "availability": true,
+        "rating": 4.3
+      },
+      {
+        "product_id": 11,
+        "product_title": "Smartwatch Series 5",
+        "product_image": "smartwatch_series_5.jpg",
+        "category": "Smartwatches",
+        "price": 299,
+        "description": "Stylish smartwatch with fitness tracking and heart rate monitoring.",
+        "Specification": ["Heart Rate Monitor", "GPS", "Water Resistant"],
+        "availability": true,
+        "rating": 4.5
+      },
+      {
+        "product_id": 12,
+        "product_title": "Smartwatch Lite",
+        "product_image": "smartwatch_lite.jpg",
+        "category": "Smartwatches",
+        "price": 150,
+        "description": "Affordable smartwatch with essential features.",
+        "Specification": ["Sleep Tracking", "Step Counter", "5-Day Battery"],
+        "availability": true,
+        "rating": 4.0
+      }
+    ]
+
+  
