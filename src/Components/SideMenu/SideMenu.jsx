@@ -11,7 +11,7 @@ const SideMenu = () => {
         .then(data=>setCategories(data))
     },[])
     return (
-        <div className="border-2 w-1/5">
+        <div className=" w-1/5">
         {categories.map((category) =>(
           <NavLink
             to={`category/${category.category}`}

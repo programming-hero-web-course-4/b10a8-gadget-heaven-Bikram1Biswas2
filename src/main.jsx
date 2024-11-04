@@ -9,39 +9,32 @@ import Statistics from "./Components/Statistics/Statistics";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CardsContainer from "./Components/CardsContainer/CardsContainer";
 
-
-
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
-        path:"/",
-       element:<Home></Home>, 
-       children:[
-        {
-          path:"/category/:products",
-          element:<CardsContainer></CardsContainer>,
-         children:[
+        path: "/",
+        element: <Home></Home>,
+        children: [
           {
-            
-          }
-         ]
-        }
-       ]
+            path: "/category/:products",
+            element: <CardsContainer></CardsContainer>,
+          },
+         
+        ],
       },
       {
-        path:"statistics",
-        element:<Statistics></Statistics>
+        path: "statistics",
+        element: <Statistics></Statistics>,
       },
       {
-        path:"dashboard",
-        element:<Dashboard></Dashboard>
-      }
-
-    ]
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+      },
+    ],
   },
 ]);
 

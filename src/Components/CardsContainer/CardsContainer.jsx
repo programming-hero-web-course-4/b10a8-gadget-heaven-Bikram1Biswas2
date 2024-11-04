@@ -1,8 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import SideMenu from "../SideMenu/SideMenu";
 import Cards from "../Cards/Cards";
 
 const CardsContainer = () => {
+    // const gadgets = useLoaderData()
+    // console.log(gadgets);
+
   const { category } = useParams();
 
   return (

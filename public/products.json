@@ -2,7 +2,7 @@
       {
         "product_id": 1,
         "product_title": "Ultrabook X200",
-        "product_image": "ultrabook_x200.jpg",
+        "product_image": "https://i.ibb.co/fGFy2mR/lenovo-x200t.jpg",
         "category": "Laptops",
         "price": 1200,
         "description": "Lightweight laptop with a powerful processor and extended battery life.",
@@ -13,7 +13,7 @@
       {
         "product_id": 2,
         "product_title": "Gaming Laptop Z500",
-        "product_image": "gaming_laptop_z500.jpg",
+        "product_image": "https://i.ibb.co/P1q20bN/Lenovo-Idea-Pad-Y500-3.jpg",
         "category": "Laptops",
         "price": 1500,
         "description": "High-performance gaming laptop with a dedicated graphics card.",
@@ -24,7 +24,7 @@
       {
         "product_id": 3,
         "product_title": "Business Laptop Pro 15",
-        "product_image": "business_laptop_pro_15.jpg",
+        "product_image": "https://i.ibb.co/NtKq0JW/41x-Yn-KAw6t-L-SL500-AC-SL500.jpg",
         "category": "Laptops",
         "price": 900,
         "description": "Professional laptop designed for business use with high security.",
@@ -35,7 +35,7 @@
       {
         "product_id": 4,
         "product_title": "2-in-1 Convertible Laptop",
-        "product_image": "convertible_laptop.jpg",
+        "product_image": "https://i.ibb.co/HrDpP8p/067eu-C84-LLCbw-SVigm6c-Kv-U-3-v1569470765.jpg",
         "category": "Laptops",
         "price": 750,
         "description": "Versatile 2-in-1 laptop that can be used as a tablet.",
@@ -46,7 +46,7 @@
       {
         "product_id": 5,
         "product_title": "Gaming Laptop A1000",
-        "product_image": "gaming_laptop_a1000.jpg",
+        "product_image": "https://i.ibb.co/ZJvrvvb/41152-Sl-JVe-L-AC.jpg",
         "category": "Laptops",
         "price": 1800,
         "description": "Ultimate gaming laptop with advanced cooling system.",
@@ -57,7 +57,7 @@
       {
         "product_id": 6,
         "product_title": "Chromebook 14",
-        "product_image": "chromebook_14.jpg",
+        "product_image": "https://i.ibb.co/HxCHRbK/images-q-tbn-ANd9-Gc-Tb-N0c-QQf-QHLv9346-Judkg-6im-MFxhtn-WFezw-s.jpg",
         "category": "Laptops",
         "price": 400,
         "description": "Affordable Chromebook for everyday tasks and online browsing.",
@@ -68,7 +68,7 @@
       {
         "product_id": 7,
         "product_title": "Smartphone Model A",
-        "product_image": "smartphone_model_a.jpg",
+        "product_image": "https://i.ibb.co/XbBm0PB/Gear-Samsung-Galaxy-A21-front-SOURCE-Samsung.jpg",
         "category": "Smartphones",
         "price": 600,
         "description": "Feature-packed smartphone with an amazing camera.",
@@ -79,7 +79,7 @@
       {
         "product_id": 8,
         "product_title": "Smartphone Model B",
-        "product_image": "smartphone_model_b.jpg",
+        "product_image": "https://i.ibb.co/xFJbdnm/67228275.jpg",
         "category": "Smartphones",
         "price": 750,
         "description": "High-end smartphone with OLED display and fast charging.",
@@ -90,7 +90,7 @@
       {
         "product_id": 9,
         "product_title": "Wireless Earbuds",
-        "product_image": "wireless_earbuds.jpg",
+        "product_image": "https://i.ibb.co/SBzcfxM/61-CDp-Uhqdw-L-AC-UF1000-1000-QL80.jpg",
         "category": "Accessories",
         "price": 80,
         "description": "Compact wireless earbuds with noise cancellation.",
@@ -101,7 +101,7 @@
       {
         "product_id": 10,
         "product_title": "Portable Charger 10000mAh",
-        "product_image": "portable_charger.jpg",
+        "product_image": "https://i.ibb.co/1M7ZnNt/10000mah-power-bank-portable-charger-for-mi-fone-mi-415-maxbhi-4-1-1.jpg",
         "category": "Accessories",
         "price": 50,
         "description": "Lightweight and compact power bank for on-the-go charging.",
@@ -112,7 +112,7 @@
       {
         "product_id": 11,
         "product_title": "Smartwatch Series 5",
-        "product_image": "smartwatch_series_5.jpg",
+        "product_image": "https://i.ibb.co/6HZypG2/images-q-tbn-ANd9-Gc-Q554j-RORYYsmj-Exo8-ZMk7-I3-IQ0sgg-Zdzno-NA-s.jpg",
         "category": "Smartwatches",
         "price": 299,
         "description": "Stylish smartwatch with fitness tracking and heart rate monitoring.",
@@ -123,7 +123,7 @@
       {
         "product_id": 12,
         "product_title": "Smartwatch Lite",
-        "product_image": "smartwatch_lite.jpg",
+        "product_image": "https://i.ibb.co/pxYWWN9/images-q-tbn-ANd9-Gc-Roa5yv-Awdzn-Gg7yy-OVb-Wf-CShpuo-Rgp-Xb-Pv-JQ-s.jpg",
         "category": "Smartwatches",
         "price": 150,
         "description": "Affordable smartwatch with essential features.",
