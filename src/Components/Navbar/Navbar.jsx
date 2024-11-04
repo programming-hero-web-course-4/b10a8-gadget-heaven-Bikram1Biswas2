@@ -45,9 +45,10 @@ const Navbar = () => {
           {Items}
           </ul>
         </div>
-        <div className="navbar-end gap-2 text-xl text-white">
-        <FaShoppingCart/>
-        <CiHeart/>
+        <div className="navbar-end mr-4 gap-2 text-xl text-white">
+       <span className="border bg-white rounded-full text-[black] p-2"> <FaShoppingCart/></span>
+
+           <span className="border bg-white rounded-full text-[black] p-2"> <CiHeart/></span>
         </div>
       </div>
     );

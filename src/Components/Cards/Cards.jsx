@@ -19,7 +19,6 @@ const Cards = ({gadget}) => {
          {
             gadgets.map(gadget => <Card gadget={gadget} key={gadget.product_id}></Card>) 
          }  
-         <h2></h2>
         </div>
     );
 };

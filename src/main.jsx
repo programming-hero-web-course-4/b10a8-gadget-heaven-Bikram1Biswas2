@@ -8,6 +8,7 @@ import Home from "./Components/Home/Home";
 import Statistics from "./Components/Statistics/Statistics";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CardsContainer from "./Components/CardsContainer/CardsContainer";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,13 +19,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        children: [
-          {
-            path: "/category/:products",
-            element: <CardsContainer></CardsContainer>,
-          },
-         
-        ],
+      },
+      {
+        path: "/category/:products",
+        element: <CardsContainer></CardsContainer>,
+      },
+      {
+        path: "/gadgets/:product_id",
+        element: <ProductDetails></ProductDetails>,
+        loader: () => fetch("/products.json"),
       },
       {
         path: "statistics",
