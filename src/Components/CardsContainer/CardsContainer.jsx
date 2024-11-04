@@ -1,7 +1,9 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import SideMenu from "../SideMenu/SideMenu";
+import Cards from "../Cards/Cards";
 
-
-const CardsContainer = ({categories}) => {
+const CardsContainer = () => {
+  const { category } = useParams();
 
   return (
     <div className="mt-44">
@@ -10,17 +12,11 @@ const CardsContainer = ({categories}) => {
       </h2>
       <div className="flex gap-2 mt-6">
         {/* Side Menu */}
-  
-          <div className="border-2 w-1/5">
-           {
-            categories.map(category =><Link> <ul className="cursor-pointer bg-white" key={category.category} category={category}><li className="bg-gray-200 m-3 rounded-lg text-center p-3 font-bold">{category.category}</li></ul></Link>)
-           }
-          </div>
+
+        <SideMenu></SideMenu>
 
         {/* Cards */}
-        <div className="border-2 w-4/5">
-          <h2>Cards</h2>
-        </div>
+        <Cards></Cards>
       </div>
     </div>
   );

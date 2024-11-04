@@ -1,9 +1,39 @@
- [
-    { "category_id": 1, "category": "Laptops" },
-    { "category_id": 2, "category": "Smartphones" },
-    { "category_id": 3, "category": "Accessories" },
-    { "category_id": 4, "category": "Smartwatches" },
-    { "category_id": 5, "category": "Macbook" },
-    { "category_id": 6, "category": "iPhone" }
-  ]
+[
+  {
+    "category_id": 1,
+    "category": "All Products",
+    "path": "/category/allProduct"
+  },
+  {
+    "category_id": 2,
+    "category": "Laptops",
+    "path": "/category/Laptops"
+  },
+  {
+    "category_id": 3,
+    "category": "Smartphones",
+    "path": "/category/Smartphones"
+  },
+  {
+    "category_id": 4,
+    "category": "Accessories",
+    "path": "/category/Accessories"
+  },
+  {
+    "category_id": 5,
+    "category": "Smartwatches",
+    "path": "/category/Smartwatches"
+  },
+  {
+    "category_id": 6,
+    "category": "Macbook",
+    "path": "/category/Macbook"
+  },
+  {
+    "category_id": 7,
+    "category": "iPhone",
+    "path": "/category/iPhone"
+  }
+]
+
 

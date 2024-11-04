@@ -5,11 +5,13 @@ import CardsContainer from "../CardsContainer/CardsContainer";
 
 const Home = () => {
     const categories = useLoaderData()
+
     console.log(categories);
+
     return (
         <div>
            <Banner></Banner>
-           <CardsContainer categories={categories}></CardsContainer>
+           <CardsContainer></CardsContainer>
         </div>
     );
 };

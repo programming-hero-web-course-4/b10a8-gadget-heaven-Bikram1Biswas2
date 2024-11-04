@@ -9,6 +9,8 @@ import Statistics from "./Components/Statistics/Statistics";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CardsContainer from "./Components/CardsContainer/CardsContainer";
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,8 +19,18 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-       element:<Home></Home>,
-       loader:()=> fetch("./categories.json")
+       element:<Home></Home>, 
+       children:[
+        {
+          path:"/category/:products",
+          element:<CardsContainer></CardsContainer>,
+         children:[
+          {
+            
+          }
+         ]
+        }
+       ]
       },
       {
         path:"statistics",

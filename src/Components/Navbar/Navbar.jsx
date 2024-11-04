@@ -1,16 +1,17 @@
 import { NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
+import "./Navbar.css"
 
 
 const Navbar = () => {
 
     const Items = (
-        <>
+        <div className="flex" id="navbar">
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/statistics">Statistics</NavLink></li>
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-        </>
+        </div>
     )
     
     return (
@@ -31,7 +32,7 @@ const Navbar = () => {
                   d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
             </div>
-            <ul
+            <ul id=""
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white">
               {Items}
