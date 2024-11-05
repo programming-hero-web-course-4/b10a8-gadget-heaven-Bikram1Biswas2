@@ -20,13 +20,17 @@ const Dashboard = () => {
             <div className="flex gap-3 justify-center">
               <button
                 onClick={() => setActiveTab("cart")}
-                className={`btn rounded-3xl px-7 text-[#9538E2] mb-2 ${activeTab === "cart" ? "bg-purple-500 text-white font-bold" : ""}`}
+                className={`btn rounded-3xl px-7 text-[#9538E2] mb-2 ${
+                  activeTab === "cart" ? "bg-purple-500 text-white font-bold" : ""
+                }`}
               >
                 Cart
               </button>
               <button
                 onClick={() => setActiveTab("wishlist")}
-                className={`btn rounded-3xl px-7 text-[#9538E2] mb-2 ${activeTab === "wishlist" ? "bg-purple-500 text-white font-bold" : ""}`}
+                className={`btn rounded-3xl px-7 text-[#9538E2] mb-2 ${
+                  activeTab === "wishlist" ? "bg-purple-500 text-white font-bold" : ""
+                }`}
               >
                 Wish List
               </button>
@@ -42,6 +46,14 @@ const Dashboard = () => {
           </button>
           <button className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200">Purchase</button>
         </div>
+
+        {/* Conditionally render heading based on the active tab */}
+        {activeTab === "cart" && cart.length > 0 && (
+          <h2 className="text-3xl font-bold text-center mt-3">Cart Items</h2>
+        )}
+        {activeTab === "wishlist" && wishList.length > 0 && (
+          <h2 className="text-3xl font-bold text-center mt-3">Wish List Items</h2>
+        )}
 
         {/* Conditionally render cart or wishlist items based on the active tab */}
         {activeTab === "cart" ? (
