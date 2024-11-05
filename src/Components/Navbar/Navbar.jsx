@@ -3,11 +3,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./Navbar.css"
 import { useContext } from "react";
-import { CartContext } from "../../main";
+import { CartContext, WishListContext } from "../../main";
 
 
 const Navbar = () => {
   const { cartCount } = useContext(CartContext);
+  const {WishListCount} = useContext(WishListContext)
 
   const location = useLocation()
   const isHomePage = location.pathname === "/"
@@ -55,7 +56,9 @@ const Navbar = () => {
        <span className="border bg-white rounded-full text-[black] p-2 "> <FaShoppingCart/></span>
        <span className="badge badge-sm indicator-item -mt-7 -ml-5">{cartCount}</span>
            <span className="border bg-white rounded-full text-[black] p-2"> <CiHeart/></span>
-           <span className="badge badge-sm indicator-item -mt-7 -ml-5">0</span>
+
+     
+           <span className="badge badge-sm indicator-item -mt-7 -ml-5">{WishListCount}</span>
         </div>
       </div>
     );

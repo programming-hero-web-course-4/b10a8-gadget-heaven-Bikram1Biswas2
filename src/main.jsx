@@ -15,6 +15,7 @@ import { toast, ToastContainer} from 'react-toastify';
 
 
 export const CartContext = createContext();
+export const WishListContext = createContext();
 
 const router = createBrowserRouter([
   {
@@ -49,8 +50,22 @@ const router = createBrowserRouter([
 
 const MainApp = () => {
   const [cart, setCart] = useState([]);
-  
+  const [wishList,setWishList]= useState([])
 
+  // WishList
+const addToWishList = (product) => {
+  const alreadyInWishList = wishList.find((item) => item.product_id === product.product_id)
+  if(alreadyInWishList){
+    toast.warn(`${product.product_title} is already in WishList`)
+  }else{
+    setWishList((prevWishList)=>[...prevWishList,product])
+    toast.success(`${product.product_title} added to WishList successfully`)
+  }
+}
+
+
+
+  // Add To Cart
   const addToCart = (product) => {
     // Check if the product is already in the cart using product_id
     const alreadyInCart = cart.find((item) => item.product_id === product.product_id);
@@ -70,8 +85,11 @@ const MainApp = () => {
 
        
   return (
-    <CartContext.Provider value={{ cartCount:cart.length, addToCart ,cart}}>
+    <CartContext.Provider value={{ cartCount:cart.length, addToCart ,cart,}}>
+      <WishListContext.Provider value={{addToWishList,wishList,WishListCount:wishList.length}}>
       <RouterProvider router={router} />
+      </WishListContext.Provider>
+     
     </CartContext.Provider>
   );
 };

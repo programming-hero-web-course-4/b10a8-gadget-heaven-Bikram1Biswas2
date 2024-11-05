@@ -2,16 +2,19 @@ import { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
-import { CartContext } from "../../main";
+import { CartContext, WishListContext } from "../../main";
 
 const ProductDetails = () => {
   const { product_id } = useParams();
   const data = useLoaderData();
   const { addToCart } = useContext(CartContext);
+  const {addToWishList,wishList} = useContext(WishListContext)
   const id = parseInt(product_id);
 
   const product = data.find((product) => product.product_id === id);
   if (!product) return <div>Product not found</div>;
+
+  const isWishListed = wishList.some(item => item.product_id === id) 
 
   const {
     product_title,
@@ -23,8 +26,6 @@ const ProductDetails = () => {
     availability,
     rating,
   } = product;
-
-
 
   return (
     <div className="relative">
@@ -54,14 +55,17 @@ const ProductDetails = () => {
               <h1 className="text-3xl font-bold">{product_title}</h1>
               <p className="font-bold">Price:${price}</p>
               <p>
-  {availability ? (
-    <span className="text-green-500 bg-green-100 border py-1 px-2 rounded-2xl mt-3">In stock</span>
-  ) : (
-    <span className="text-gray-500 bg-gray-100 border py-1 px-2 rounded-2xl mt-3">Out of stock</span>
-  )}
-</p>
+                {availability ? (
+                  <span className="text-green-500 bg-green-100 border py-1 px-2 rounded-2xl mt-3">
+                    In stock
+                  </span>
+                ) : (
+                  <span className="text-gray-500 bg-gray-100 border py-1 px-2 rounded-2xl mt-3">
+                    Out of stock
+                  </span>
+                )}
+              </p>
 
-           
               <p>{description}</p>
               <p className="font-bold mb-2">Specification</p>
               <div>
@@ -105,10 +109,23 @@ const ProductDetails = () => {
                 </div>
                 <p className="bg-gray-300 rounded-2xl p-3">{rating}</p>
               </div>
-            <div className="flex gap-2">
-                <button onClick={()=>addToCart(product)} className="p-3 flex items-center gap-2 bg-[#9538E2] rounded-2xl font-bold text-white">Add To Cart <FaShoppingCart></FaShoppingCart> </button>
-                <span className="border bg-white rounded-full text-[black] p-2 text-2xl font-bold text-center"> <CiHeart/></span>
-            </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="p-3 flex items-center gap-2 bg-[#9538E2] rounded-2xl font-bold text-white"
+                >
+                  Add To Cart <FaShoppingCart></FaShoppingCart>{" "}
+                </button>
+                <button
+                  onClick={() => addToWishList(product)}
+                  className={`border bg-white rounded-full text-[black] p-2 text-2xl font-bold text-center ${
+                    isWishListed ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                  disabled={isWishListed}
+                >
+                  <CiHeart />
+                </button>
+              </div>
             </div>
           </div>
         </div>
