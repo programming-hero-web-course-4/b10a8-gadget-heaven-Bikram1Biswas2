@@ -11,6 +11,7 @@ const ProductDetails = () => {
   const id = parseInt(product_id);
 
   const product = data.find((product) => product.product_id === id);
+  if (!product) return <div>Product not found</div>;
 
   const {
     product_title,
@@ -105,7 +106,7 @@ const ProductDetails = () => {
                 <p className="bg-gray-300 rounded-2xl p-3">{rating}</p>
               </div>
             <div className="flex gap-2">
-                <button onClick={()=>addToCart()} className="p-3 flex items-center gap-2 bg-[#9538E2] rounded-2xl font-bold text-white">Add To Cart <FaShoppingCart></FaShoppingCart> </button>
+                <button onClick={()=>addToCart(product)} className="p-3 flex items-center gap-2 bg-[#9538E2] rounded-2xl font-bold text-white">Add To Cart <FaShoppingCart></FaShoppingCart> </button>
                 <span className="border bg-white rounded-full text-[black] p-2 text-2xl font-bold text-center"> <CiHeart/></span>
             </div>
             </div>

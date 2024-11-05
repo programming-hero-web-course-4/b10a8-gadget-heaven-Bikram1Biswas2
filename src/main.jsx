@@ -48,17 +48,29 @@ const router = createBrowserRouter([
 ]);
 
 const MainApp = () => {
-  const [cartCount, setCartCount] = useState(0);
+  const [cart, setCart] = useState([]);
+  
 
-  const addToCart = () => {
-    setCartCount((prevCount) => prevCount + 1);
-    toast.success("Product Added to Cart Successfully")
-  }
-   
+  const addToCart = (product) => {
+    // Check if the product is already in the cart using product_id
+    const alreadyInCart = cart.find((item) => item.product_id === product.product_id);
+
+    if (alreadyInCart) {
+      // Show a warning if the product is already in the cart
+      toast.warn(`${product.product_title} is already in the cart`);
+    } else {
+      // Add the product to the cart if it's not there
+      setCart((prevCart) => [...prevCart, product]);
+      toast.success(`${product.product_title} added to cart successfully`);
+    }
+  };
+
+
+
 
        
   return (
-    <CartContext.Provider value={{ cartCount, addToCart }}>
+    <CartContext.Provider value={{ cartCount:cart.length, addToCart ,cart}}>
       <RouterProvider router={router} />
     </CartContext.Provider>
   );
