@@ -84,9 +84,10 @@ const addToWishList = (product) => {
 
        
   return (
-    <CartContext.Provider value={{ cartCount:cart.length, addToCart ,cart,}}>
-      <WishListContext.Provider value={{addToWishList,wishList,WishListCount:wishList.length}}>
+    <CartContext.Provider value={{ cartCount:cart.length, addToCart ,cart,setCart}}>
+      <WishListContext.Provider value={{addToWishList,wishList,WishListCount:wishList.length,setWishList}}>
       <RouterProvider router={router} />
+      <ToastContainer></ToastContainer>
       </WishListContext.Provider>
      
     </CartContext.Provider>
@@ -96,6 +97,5 @@ const addToWishList = (product) => {
 createRoot(document.getElementById("root")).render(
   <StrictMode>
    <MainApp></MainApp>
-   <ToastContainer></ToastContainer>
   </StrictMode>
 );

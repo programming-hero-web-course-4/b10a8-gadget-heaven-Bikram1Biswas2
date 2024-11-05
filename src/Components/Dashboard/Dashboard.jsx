@@ -2,13 +2,31 @@ import { useContext, useState } from "react";
 import { CartContext, WishListContext } from "../../main";
 import { RxCross2 } from "react-icons/rx";
 import { TbSortDescending } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { cart } = useContext(CartContext);
+  
+  const { cart ,setCart} = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
   const [activeTab, setActiveTab] = useState("cart"); 
+  const [purchaseTotal, setPurchaseTotal] = useState(0);
+  const [isModalOpen,setIsModalOpen]= useState(false)
+  const navigate = useNavigate()
 
   const totalPrice = cart.reduce((sum,item) =>sum + item.price,0)
+
+  const handlePurchase = ()=> {
+    if(cart.length>0){
+        setPurchaseTotal(totalPrice);
+        setIsModalOpen(true);
+        setCart([])
+    }
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    navigate("/")
+  }
 
   return (
     <div>
@@ -46,7 +64,9 @@ const Dashboard = () => {
           <button className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200">
             Sort By Price <TbSortDescending />
           </button>
-          <button className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200">Purchase</button>
+          <button onClick={handlePurchase} className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200" 
+          disabled={cart.length === 0 || totalPrice === 0}
+          >Purchase</button>
         </div>
 
         {/* Conditionally render heading based on the active tab */}
@@ -122,6 +142,18 @@ const Dashboard = () => {
           ) : (
             <p className="text-center mt-4">No items in the wishlist</p>
           )
+        )}
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+            <div className="bg-white p-8 rounded-md text-center">
+              <h2 className="text-2xl font-bold mb-4">Congratulations!</h2>
+              <p>Your purchase was successful!</p>
+              <p>Thanks for Purchasing</p>
+              <p>Total:${purchaseTotal}</p>
+              <button className="mt-4 btn bg-blue-500 text-white px-4 py-2 rounded" onClick={closeModal}>Close</button>
+            </div>
+          </div>
         )}
       </div>
     </div>
