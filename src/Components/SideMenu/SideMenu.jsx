@@ -5,16 +5,19 @@ import { NavLink } from "react-router-dom";
 const SideMenu = () => {
     const [categories,setCategories] = useState([])
 
+
     useEffect(()=>{
         fetch("/categories.json")
         .then(res=>res.json())
         .then(data=>setCategories(data))
     },[])
+
+    
     return (
         <div className=" w-1/5">
         {categories.map((category) =>(
           <NavLink
-            to={`category/${category.category}`}
+            to={`/category/${category.path}`}
             key={category.category_id}
             category={category}
           >

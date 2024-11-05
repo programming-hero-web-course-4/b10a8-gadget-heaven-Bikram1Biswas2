@@ -1,7 +1,7 @@
 import { createContext, StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root/Root";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import Home from "./Components/Home/Home";
@@ -11,6 +11,7 @@ import CardsContainer from "./Components/CardsContainer/CardsContainer";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import { toast, ToastContainer} from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+import ContactUs from "./Components/ContactUs/ContactUs";
 
 
 
@@ -23,12 +24,13 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
+
       {
-        path: "/",
-        element: <Home></Home>,
+        path:"/",
+        element:<Home></Home>,
       },
       {
-        path: "/category/:products",
+        path: "/category/:category",
         element: <CardsContainer></CardsContainer>,
       },
       {
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
         path: "dashboard",
         element: <Dashboard></Dashboard>,
       },
+      {
+        path:"contactUs",
+        element:<ContactUs></ContactUs>
+      }
     ],
   },
 ]);
