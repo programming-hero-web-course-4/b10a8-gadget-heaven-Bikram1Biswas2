@@ -6,7 +6,9 @@ import { TbSortDescending } from "react-icons/tb";
 const Dashboard = () => {
   const { cart } = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
-  const [activeTab, setActiveTab] = useState("cart"); // "cart" or "wishlist"
+  const [activeTab, setActiveTab] = useState("cart"); 
+
+  const totalPrice = cart.reduce((sum,item) =>sum + item.price,0)
 
   return (
     <div>
@@ -21,7 +23,7 @@ const Dashboard = () => {
               <button
                 onClick={() => setActiveTab("cart")}
                 className={`btn rounded-3xl px-7 text-[#9538E2] mb-2 ${
-                  activeTab === "cart" ? "bg-purple-500 text-white font-bold" : ""
+                  activeTab === "cart" ? "bg-purple-300 text-black font-bold" : ""
                 }`}
               >
                 Cart
@@ -29,7 +31,7 @@ const Dashboard = () => {
               <button
                 onClick={() => setActiveTab("wishlist")}
                 className={`btn rounded-3xl px-7 text-[#9538E2] mb-2 ${
-                  activeTab === "wishlist" ? "bg-purple-500 text-white font-bold" : ""
+                  activeTab === "wishlist" ? "bg-purple-300 text-black font-bold" : ""
                 }`}
               >
                 Wish List
@@ -49,7 +51,11 @@ const Dashboard = () => {
 
         {/* Conditionally render heading based on the active tab */}
         {activeTab === "cart" && cart.length > 0 && (
-          <h2 className="text-3xl font-bold text-center mt-3">Cart Items</h2>
+          <div className="text-center mt-3">
+          <h2 className="text-3xl font-bold">Cart Items</h2>
+          <p className="text-xl font-semibold mt-2">Total Price: ${totalPrice}</p>
+        </div>
+           
         )}
         {activeTab === "wishlist" && wishList.length > 0 && (
           <h2 className="text-3xl font-bold text-center mt-3">Wish List Items</h2>

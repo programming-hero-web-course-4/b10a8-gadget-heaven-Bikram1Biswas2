@@ -64,7 +64,6 @@ const addToWishList = (product) => {
 }
 
 
-
   // Add To Cart
   const addToCart = (product) => {
     // Check if the product is already in the cart using product_id
