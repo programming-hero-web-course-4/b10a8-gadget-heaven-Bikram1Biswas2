@@ -28,6 +28,12 @@ const Dashboard = () => {
     navigate("/")
   }
 
+//   Sort
+const sortByPriceDescending = () => {
+    const sorted = [...cart].sort((a,b)=>b.price-a.price)
+setCart(sorted)
+}
+
   return (
     <div>
       <div className="hero bg-[#9538E2] text-white rounded-b-xl pb-44">
@@ -61,7 +67,7 @@ const Dashboard = () => {
 
       <div className="mb-10 border-2 border-white p-4 rounded-xl">
         <div className="flex gap-2 justify-end font-bold">
-          <button className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200">
+          <button onClick={sortByPriceDescending} className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200">
             Sort By Price <TbSortDescending />
           </button>
           <button onClick={handlePurchase} className="flex items-center text-purple-600 border-purple-500 rounded-2xl px-3 py-1 gap-2 bg-fuchsia-200" 
