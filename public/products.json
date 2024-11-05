@@ -29,7 +29,7 @@
         "price": 900,
         "description": "Professional laptop designed for business use with high security.",
         "Specification": ["Intel i5", "8GB RAM", "256GB SSD"],
-        "availability": true,
+        "availability": false,
         "rating": 4.5
       },
       {
@@ -62,7 +62,7 @@
         "price": 400,
         "description": "Affordable Chromebook for everyday tasks and online browsing.",
         "Specification": ["Intel Celeron", "4GB RAM", "32GB Storage"],
-        "availability": true,
+        "availability": false,
         "rating": 4.0
       },
       {
@@ -106,7 +106,7 @@
         "price": 50,
         "description": "Lightweight and compact power bank for on-the-go charging.",
         "Specification": ["10000mAh Capacity", "USB-C", "Fast Charging Support"],
-        "availability": true,
+        "availability": false,
         "rating": 4.3
       },
       {

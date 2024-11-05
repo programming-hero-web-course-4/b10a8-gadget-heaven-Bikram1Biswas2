@@ -1,11 +1,13 @@
+import { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
+import { CartContext } from "../../main";
 
 const ProductDetails = () => {
   const { product_id } = useParams();
   const data = useLoaderData();
-  console.log(data);
+  const { addToCart } = useContext(CartContext);
   const id = parseInt(product_id);
 
   const product = data.find((product) => product.product_id === id);
@@ -20,9 +22,12 @@ const ProductDetails = () => {
     availability,
     rating,
   } = product;
+
+
+
   return (
     <div className="relative">
-      <div className="hero bg-[#9538E2] text-white rounded-b-xl pb-44 ">
+      <div className="hero bg-[#9538E2] text-white rounded-xl pb-44 ">
         <div className="hero-content text-center ">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold">Product Details</h1>
@@ -37,7 +42,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-      <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-48 border-2 border-white rounded-xl backdrop-blur-md h-[300px] w-[950px] mb-20 ">
+      <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-[340px] border-2 border-white rounded-xl bg-white shadow-2xl w-[950px] mb-20 ">
         <div className="hero">
           <div className="hero-content flex-col lg:flex-row ">
             <img
@@ -47,7 +52,15 @@ const ProductDetails = () => {
             <div className="space-y-2">
               <h1 className="text-3xl font-bold">{product_title}</h1>
               <p className="font-bold">Price:${price}</p>
+              <p>
+  {availability ? (
+    <span className="text-green-500 bg-green-100 border py-1 px-2 rounded-2xl mt-3">In stock</span>
+  ) : (
+    <span className="text-gray-500 bg-gray-100 border py-1 px-2 rounded-2xl mt-3">Out of stock</span>
+  )}
+</p>
 
+           
               <p>{description}</p>
               <p className="font-bold mb-2">Specification</p>
               <div>
@@ -92,7 +105,7 @@ const ProductDetails = () => {
                 <p className="bg-gray-300 rounded-2xl p-3">{rating}</p>
               </div>
             <div className="flex gap-2">
-                <button className="p-3 flex items-center gap-2 bg-[#9538E2] rounded-2xl font-bold">Add To Cart <FaShoppingCart></FaShoppingCart> </button>
+                <button onClick={()=>addToCart()} className="p-3 flex items-center gap-2 bg-[#9538E2] rounded-2xl font-bold text-white">Add To Cart <FaShoppingCart></FaShoppingCart> </button>
                 <span className="border bg-white rounded-full text-[black] p-2 text-2xl font-bold text-center"> <CiHeart/></span>
             </div>
             </div>
