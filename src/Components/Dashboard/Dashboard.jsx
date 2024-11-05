@@ -3,6 +3,7 @@ import { CartContext, WishListContext } from "../../main";
 import { RxCross2 } from "react-icons/rx";
 import { TbSortDescending } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import { BiSolidBadgeCheck } from "react-icons/bi";
 
 const Dashboard = () => {
   
@@ -153,6 +154,7 @@ setCart(sorted)
         {isModalOpen && (
           <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
             <div className="bg-white p-8 rounded-md text-center">
+           <p className="mx-auto text-center font-bold text-5xl text-purple-400"> <BiSolidBadgeCheck /></p>
               <h2 className="text-2xl font-bold mb-4">Congratulations!</h2>
               <p>Your purchase was successful!</p>
               <p>Thanks for Purchasing</p>
