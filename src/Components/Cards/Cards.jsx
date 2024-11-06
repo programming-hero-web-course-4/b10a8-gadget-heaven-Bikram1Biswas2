@@ -28,7 +28,7 @@ const {category}= useParams()
     return (
         <div className=" w-4/5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
          {
-            gadgets.map(gadget => <Card gadget={gadget} key={gadget.product_id}></Card>) 
+            gadgets.length<1?<div className="flex text-4xl text-red-500 text-center font-bold items-center justify-center">No Gadgets Available For This Category</div> :gadgets.map(gadget => <Card gadget={gadget} key={gadget.product_id}></Card>) 
          }  
         </div>
     );

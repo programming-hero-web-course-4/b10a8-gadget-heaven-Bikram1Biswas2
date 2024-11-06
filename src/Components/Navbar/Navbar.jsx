@@ -10,8 +10,9 @@ const Navbar = () => {
   const { cartCount } = useContext(CartContext);
   const {WishListCount} = useContext(WishListContext)
 
-  const location = useLocation()
-  const isHomePage = location.pathname === "/"
+  const {pathname} = useLocation()
+  const isHomePage = pathname.includes("/home")
+  console.log(location);
 
     const Items = (
         <div className="flex" id="navbar">

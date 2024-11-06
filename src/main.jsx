@@ -1,7 +1,11 @@
 import { createContext, StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Root from "./Components/Root/Root";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import Home from "./Components/Home/Home";
@@ -9,11 +13,9 @@ import Statistics from "./Components/Statistics/Statistics";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CardsContainer from "./Components/CardsContainer/CardsContainer";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
-import { toast, ToastContainer} from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ContactUs from "./Components/ContactUs/ContactUs";
-
-
 
 export const CartContext = createContext();
 export const WishListContext = createContext();
@@ -24,15 +26,26 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
+      {
+        path: "/",
+        element: <Navigate to="/home" replace></Navigate>,
+      },
 
       {
-        path:"/",
-        element:<Home></Home>,
+        path: "/home",
+        element: <Home></Home>,
+        children: [
+          {
+            path: "/home",
+            element: <Navigate to="/home/allProduct" replace></Navigate>,
+          },
+          {
+            path: "/home/:category",
+            element: <CardsContainer></CardsContainer>,
+          },
+        ],
       },
-      {
-        path: "/category/:category",
-        element: <CardsContainer></CardsContainer>,
-      },
+
       {
         path: "/gadgets/:product_id",
         element: <ProductDetails></ProductDetails>,
@@ -47,33 +60,36 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
       },
       {
-        path:"contactUs",
-        element:<ContactUs></ContactUs>
-      }
+        path: "contactUs",
+        element: <ContactUs></ContactUs>,
+      },
     ],
   },
 ]);
 
 const MainApp = () => {
   const [cart, setCart] = useState([]);
-  const [wishList,setWishList]= useState([])
+  const [wishList, setWishList] = useState([]);
 
   // WishList
-const addToWishList = (product) => {
-  const alreadyInWishList = wishList.find((item) => item.product_id === product.product_id)
-  if(alreadyInWishList){
-    toast.warn(`${product.product_title} is already in WishList`)
-  }else{
-    setWishList((prevWishList)=>[...prevWishList,product])
-    toast.success(`${product.product_title} added to WishList successfully`)
-  }
-}
-
+  const addToWishList = (product) => {
+    const alreadyInWishList = wishList.find(
+      (item) => item.product_id === product.product_id
+    );
+    if (alreadyInWishList) {
+      toast.warn(`${product.product_title} is already in WishList`);
+    } else {
+      setWishList((prevWishList) => [...prevWishList, product]);
+      toast.success(`${product.product_title} added to WishList successfully`);
+    }
+  };
 
   // Add To Cart
   const addToCart = (product) => {
     // Check if the product is already in the cart using product_id
-    const alreadyInCart = cart.find((item) => item.product_id === product.product_id);
+    const alreadyInCart = cart.find(
+      (item) => item.product_id === product.product_id
+    );
 
     if (alreadyInCart) {
       // Show a warning if the product is already in the cart
@@ -85,23 +101,27 @@ const addToWishList = (product) => {
     }
   };
 
-
-
-
-       
   return (
-    <CartContext.Provider value={{ cartCount:cart.length, addToCart ,cart,setCart}}>
-      <WishListContext.Provider value={{addToWishList,wishList,WishListCount:wishList.length,setWishList}}>
-      <RouterProvider router={router} />
-      <ToastContainer></ToastContainer>
+    <CartContext.Provider
+      value={{ cartCount: cart.length, addToCart, cart, setCart }}
+    >
+      <WishListContext.Provider
+        value={{
+          addToWishList,
+          wishList,
+          WishListCount: wishList.length,
+          setWishList,
+        }}
+      >
+        <RouterProvider router={router} />
+        <ToastContainer></ToastContainer>
       </WishListContext.Provider>
-     
     </CartContext.Provider>
   );
 };
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-   <MainApp></MainApp>
+    <MainApp></MainApp>
   </StrictMode>
 );

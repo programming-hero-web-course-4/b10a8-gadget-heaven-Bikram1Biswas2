@@ -13,8 +13,8 @@ documentTitle("home")
     return (
         <div>
            <Banner></Banner>
-           <CardsContainer></CardsContainer>
-    
+          
+          <Outlet></Outlet>
     
         </div>
     );

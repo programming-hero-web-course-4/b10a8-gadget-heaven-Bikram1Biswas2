@@ -18,7 +18,7 @@ const SideMenu = () => {
         <div className=" w-1/5 " id="sidebar">
         {categories.map((category) =>(
           <NavLink 
-            to={`/category/${category.path}`}
+            to={`/home/${category.path}`}
             key={category.category_id}
             category={category}
           >
