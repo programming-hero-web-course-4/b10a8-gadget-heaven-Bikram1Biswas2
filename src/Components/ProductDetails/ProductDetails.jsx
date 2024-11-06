@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { CartContext, WishListContext } from "../../main";
 import documentTitle from "../documentTitle";
 
@@ -40,9 +40,9 @@ const ProductDetails = () => {
               next level. From smart devices to the coolest accessories, we have
               it all!
             </p>
-            <button className="btn rounded-3xl px-7 text-[#9538E2] mb-2">
+            <Link to="/dashboard" className="btn rounded-3xl px-7 text-[#9538E2] mb-2">
               Shop Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>
