@@ -3,8 +3,10 @@ import { CiHeart } from "react-icons/ci";
 import { FaShoppingCart } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
 import { CartContext, WishListContext } from "../../main";
+import documentTitle from "../documentTitle";
 
 const ProductDetails = () => {
+    documentTitle("Product Details")
   const { product_id } = useParams();
   const data = useLoaderData();
   const { addToCart } = useContext(CartContext);

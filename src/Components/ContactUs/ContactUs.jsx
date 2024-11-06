@@ -2,7 +2,9 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
+import documentTitle from "../documentTitle";
 const ContactUs = () => {
+    documentTitle("ContactUS")
     return (
         <div className="hero bg-[#9538E2] text-white rounded-b-xl pb-44 ">
   <div className="hero-content text-center ">

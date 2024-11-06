@@ -4,9 +4,10 @@ import { RxCross2 } from "react-icons/rx";
 import { TbSortDescending } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { BiSolidBadgeCheck } from "react-icons/bi";
+import documentTitle from "../documentTitle";
 
 const Dashboard = () => {
-  
+  documentTitle("dashboard")
   const { cart ,setCart} = useContext(CartContext);
   const { wishList } = useContext(WishListContext);
   const [activeTab, setActiveTab] = useState("cart"); 

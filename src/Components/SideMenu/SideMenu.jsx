@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import "./SideMenu.css"
 
 
 const SideMenu = () => {
@@ -14,9 +15,9 @@ const SideMenu = () => {
 
     
     return (
-        <div className=" w-1/5">
+        <div className=" w-1/5 " id="sidebar">
         {categories.map((category) =>(
-          <NavLink
+          <NavLink 
             to={`/category/${category.path}`}
             key={category.category_id}
             category={category}
